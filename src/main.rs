@@ -50,7 +50,7 @@ async fn reddit(sub: String) -> String {
     let mut rndnum = rand::thread_rng().gen_range(0..sublen);
     let mut urlimg = format!("{}", subdata["data"]["children"][rndnum]["data"]["url"]);
     let mut count = 0;
-    while urlimg.contains("comments") || urlimg.contains("gallery") || urlimg.contains("v.redd") {
+    while urlimg.contains("comments") || urlimg.contains("gallery") || urlimg.contains("v.redd")|| !urlimg.contains("redd") {
         rndnum = rand::thread_rng().gen_range(0..sublen);
         urlimg = format!("{}", subdata["data"]["children"][rndnum]["data"]["url"]);
         count += 1;
